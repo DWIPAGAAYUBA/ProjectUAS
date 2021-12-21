@@ -2,17 +2,6 @@ import java.util.Scanner;
 import java.util.Date;
 
 public class kasirRev {
-    public static String metodeBayar(int pil) {
-        String pilihanBayar = " ";
-        if(pil == 1){
-            pilihanBayar = "Cash";
-        } else if(pil == 2){
-            pilihanBayar = "Debit";
-        } else if(pil == 3){
-            pilihanBayar = "e-Wallet";
-        }
-        return pilihanBayar;
-    }
     public static int jumlahBrg;
     public static String namaBrg[];
     public static int barang[][];
@@ -55,15 +44,27 @@ public class kasirRev {
                 break;
         }
     }
+    public static String metodeBayar(int pil) {
+        String pilihanBayar = " ";
+        if(pil == 1){
+            pilihanBayar = "Cash";
+        } else if(pil == 2){
+            pilihanBayar = "Debit";
+        } else if(pil == 3){
+            pilihanBayar = "e-Wallet";
+        }
+        return pilihanBayar;
+    }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         Date tanggal = new Date();
-        System.out.print("Masukkan nama kasir: "); 
-        String namaKasir = sc.nextLine();
 
         String nomor = "0";
         int pilihan, pilihBayar = 0, rek = 0, ewallet;
         double totalBarang = 0, kembalian = 0, diskon = 0, stlhDiskon = 0, ppn = 0, totalFinal = 0, nominal = 0;
+
+        System.out.print("Masukkan nama kasir: "); 
+        String namaKasir = sc.nextLine();
         do {
             System.out.println();
             System.out.println("Pilih menu transaksi:");
