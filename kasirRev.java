@@ -62,7 +62,7 @@ public class kasirRev {
         String namaKasir = sc.nextLine();
 
         String nomor = "0";
-        int pilihan, pilihBayar = 0, pin = 0, ewallet;
+        int pilihan, pilihBayar = 0, rek = 0, ewallet;
         double totalBarang = 0, kembalian = 0, diskon = 0, stlhDiskon = 0, ppn = 0, totalFinal = 0, nominal = 0;
         do {
             System.out.println();
@@ -98,7 +98,7 @@ public class kasirRev {
                     sc.nextLine();
 
                     namaBrg = new String[jumlahBrg];
-                    barang = new int[jumlahBrg][jumlahBrg];
+                    barang = new int[jumlahBrg][2];
                     hargaItem = new double[jumlahBrg];
 
                     for(int i = 0; i < jumlahBrg; i++){
@@ -145,8 +145,8 @@ public class kasirRev {
                             kembalian = nominal - totalFinal;
                             break;
                         case 2:
-                            System.out.print("Masukkan PIN kartu: ");
-                            pin = sc.nextInt();
+                            System.out.print("Masukkan No. Rek: ");
+                            rek = sc.nextInt();
                             System.out.print("Masukkan nominal: ");
                             nominal = sc.nextDouble();
                             break;
@@ -183,7 +183,7 @@ public class kasirRev {
                             }
                             break;
                         default:
-                            System.exit(0);
+                            break;
                     }
                     break;
                 case 4:
